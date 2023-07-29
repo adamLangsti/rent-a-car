@@ -6,5 +6,39 @@
     list-style-type: none;
 }
 .navbar-list-items {
-    margin: 10px 15px;
+    margin: 40px 15px 30px 30px;
+    text-transform: uppercase;
+}
+
+.navbar-list-items-links {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.1s, background-color 0.1s, padding 0.2s ease-in;
+    color: #000;
+    position: relative;
+}
+
+.navbar-list-items-links::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 1.4em;
+    bottom: 3px;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #000;
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: color 0.1s, transform 0.2s ease-out;
+}
+
+.navbar-list-items-links:active::before {
+    background-color: #000;
+}
+
+.navbar-list-items-links:hover::before,
+.navbar-list-items-links:focus::before {
+    transform-origin: left top;
+    transform: scale(1, 1);
 }
