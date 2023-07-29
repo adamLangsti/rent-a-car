@@ -5,11 +5,31 @@ const Navbar = () => {
     return (
         <div className='navbar-container'>
             <ul className='navbar-items'>
-                <li className='navbar-list-items'>Start</li>
-                <li className='navbar-list-items'>Reservation</li>
-                <li className='navbar-list-items'>About us</li>
-                <li className='navbar-list-items'>Contact us</li>
-                <li className='navbar-list-items'>My booking</li>
+                <li className='navbar-list-items'>
+                    <a href='#' className='navbar-list-items-links'>
+                        Start
+                    </a>
+                </li>
+                <li className='navbar-list-items'>
+                    <a href='#' className='navbar-list-items-links'>
+                        Reservation
+                    </a>
+                </li>
+                <li className='navbar-list-items'>
+                    <a href='#' className='navbar-list-items-links'>
+                        About us
+                    </a>
+                </li>
+                <li className='navbar-list-items'>
+                    <a href='#' className='navbar-list-items-links'>
+                        Contact us
+                    </a>
+                </li>
+                <li className='navbar-list-items'>
+                    <a href='#' className='navbar-list-items-links'>
+                        My booking
+                    </a>
+                </li>
             </ul>
         </div>
     );
