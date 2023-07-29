@@ -1,0 +1,10 @@
+.navbar-container {
+    position: relative;
+}
+.navbar-items {
+    display: flex;
+    list-style-type: none;
+}
+.navbar-list-items {
+    margin: 10px 15px;
+}
