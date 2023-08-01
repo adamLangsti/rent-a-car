@@ -114,3 +114,11 @@
         display: none;
     }
 }
+
+@media screen and (max-width: 970px) {
+    .logo {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
