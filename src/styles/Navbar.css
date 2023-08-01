@@ -4,6 +4,8 @@
 .navbar-items {
     display: flex;
     list-style-type: none;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 }
 .navbar-list-items {
     margin: 40px 15px 30px 30px;
@@ -12,10 +14,14 @@
 
 .navbar-list-items-links {
     text-decoration: none;
-    color: #000;
     transition: color 0.1s, background-color 0.1s, padding 0.2s ease-in;
-    color: #000;
+    color: var(--accent-color);
     position: relative;
+}
+.navbar-list-items-links:active,
+.navbar-list-items-links:focus,
+.navbar-list-items-links:target {
+    color: #717171;
 }
 
 .navbar-list-items-links::before {
@@ -27,14 +33,20 @@
     left: 0;
     height: 3px;
     width: 100%;
-    background-color: #000;
+    background-color: var(--accent-color);
     transform-origin: right top;
     transform: scale(0, 1);
     transition: color 0.1s, transform 0.2s ease-out;
 }
 
+.navbar-list-items-links:active::before,
+.navbar-list-items-links:focus::before,
+.navbar-list-items-links:target::before {
+    background-color: #717171;
+}
+
 .navbar-list-items-links:active::before {
-    background-color: #000;
+    background-color: #717171;
 }
 
 .navbar-list-items-links:hover::before,
@@ -69,11 +81,14 @@
         top: 0;
         left: 0;
         background-color: #f9f9f9;
-        opacity: 1;
         pointer-events: none;
+        opacity: 0;
+        transition: opacity 5s ease-in-out;
     }
     .navbar-items.active {
         pointer-events: auto;
+        opacity: 1;
+        color: green;
     }
     .navbar-items.inactive {
         display: none;
