@@ -7,6 +7,9 @@
 html {
     height: 100vh;
     width: 100vw;
-    font-family: "REM";
+    font-family: 'REM';
     font-size: 20px;
+}
+:root {
+    --accent-color: #292929;
 }
