@@ -5,25 +5,42 @@ import logo2 from '../images/merc.png';
 import logo3 from '../images/rolls.png';
 
 const Hero = () => {
-    const images = [logo1, logo2, logo3];
+    let images = [logo1, logo2, logo3];
+
+    const [nextImage, setNextImage] = useState('');
     const [activeIndex, setActiveIndex] = useState(0);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 5000);
+    function handlePrevImage() {
+        setActiveIndex(
+            (prevIndex) => (prevIndex - (1 % images.length)) % images.length
+        );
+    }
 
-        return () => clearInterval(interval);
-    }, [images.length]);
+    function handleNextImage() {
+        setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }
 
     return (
-        <section className='hero-container'>
-            <div className='overlay' />
-            <img
-                src={images[activeIndex]}
-                alt='car-selection'
-                style={{ maxWidth: '40%' }}
-            />
+        <section aria-label='Newest Photos'>
+            <button className='carousel-button prev' onClick={handlePrevImage}>
+                &#8592;
+            </button>
+            <button className='carousel-button next' onClick={handleNextImage}>
+                &#8594;
+            </button>
+            <div className='carousel'>
+                <ul>
+                    {images.map((image, index) => (
+                        <li
+                            key={index}
+                            className={
+                                activeIndex === index ? 'active' : 'slide'
+                            }>
+                            <img src={image} alt={`Car ${index + 1}`} />
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </section>
     );
 };
